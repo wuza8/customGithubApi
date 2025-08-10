@@ -47,8 +47,6 @@ public class CustomGithubApiService {
                 )
                 .toEntity(GithubApiRepoListDto.class);
 
-        assert response.getBody() != null;
-
         return response.getBody().items().stream()
                 .filter(s -> !s.fork)
                 .map(repo -> {
@@ -68,7 +66,6 @@ public class CustomGithubApiService {
                             })
                             .body(GithubApiBranchesDto[].class);
 
-                    assert branchResult != null;
                     List<BranchDto> branches = Arrays.stream(branchResult)
                             .map(branch -> new BranchDto(branch.name, branch.commit.sha))
                             .toList(); // Java 16+
