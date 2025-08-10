@@ -60,11 +60,3 @@ To run all tests:
 ```
 
 This includes the integration test that verifies the main API endpoint in a "happy path" scenario.
-
-## Running Tests
-
-To run all tests:
-```
-./gradlew test
-```
-This includes the integration test that verifies the main API endpoint in a "happy path" scenario.
